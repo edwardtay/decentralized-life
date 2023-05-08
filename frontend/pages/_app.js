@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
+import TokensBalanceDisplay from "../components/tokensBalanceDisplay";
 
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, useAccount, WagmiConfig } from "wagmi";
@@ -19,6 +20,7 @@ import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import MainLayout from "../layout/mainLayout";
 import { useRouter } from "next/router";
+
 
 const { chains, provider } = configureChains(
 	[
@@ -64,11 +66,14 @@ function MyApp({ Component, pageProps }) {
 				chains={chains}
 			>
 				<MainLayout>
-					<Component {...pageProps} />
+					
+					<TokensBalanceDisplay walletAddress={account?.address} chain={"ETH_MAINNET"} /> <Component {...pageProps} />
 				</MainLayout>
 			</RainbowKitProvider>
 		</WagmiConfig>
-	);
+		
+	);	
+
 }
 
 export default MyApp;
