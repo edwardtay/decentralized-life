@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import TokensBalanceDisplay from "../components/tokensBalanceDisplay";
+import TransactionsHistoryDisplay from "../components/transactionsHistoryDisplay";
 
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, useAccount, WagmiConfig } from "wagmi";
@@ -68,7 +69,10 @@ function MyApp({ Component, pageProps }) {
 				<MainLayout>
 					
 					<TokensBalanceDisplay walletAddress={account?.address} chain={"ETH_MAINNET"} /> <Component {...pageProps} />
-				</MainLayout>
+				
+					<TransactionsHistoryDisplay walletAddress={account?.address} />
+					
+					</MainLayout>
 			</RainbowKitProvider>
 		</WagmiConfig>
 		
