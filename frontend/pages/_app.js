@@ -7,15 +7,12 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, useAccount, WagmiConfig } from "wagmi";
 import {
 	mainnet,
-	polygon,
-	optimism,
 	arbitrum,
+	bsc,
+	gnosis,
 	goerli,
-	polygonMumbai,
-	optimismGoerli,
-	arbitrumGoerli,
-	polygonZkEvm,
-	polygonZkEvmTestnet,
+	optimism,
+	polygon,
 } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
@@ -26,15 +23,12 @@ import { useRouter } from "next/router";
 const { chains, provider } = configureChains(
 	[
 		mainnet,
-		goerli,
-		polygon,
-		polygonMumbai,
-		optimism,
-		optimismGoerli,
 		arbitrum,
-    arbitrumGoerli,
-    polygonZkEvm,
-    polygonZkEvmTestnet
+		bsc,
+		gnosis,
+		goerli,
+		optimism,
+		polygon,
 	],
 	[alchemyProvider({ apiKey: process.env.ALCHEMY_API_KEY }), publicProvider()]
 );
@@ -67,8 +61,8 @@ function MyApp({ Component, pageProps }) {
 				chains={chains}
 			>
 				<MainLayout>
-					
-					<TokensBalanceDisplay walletAddress={account?.address} chain={"ETH_MAINNET"} /> <Component {...pageProps} />
+				<Component {...pageProps} />
+					<TokensBalanceDisplay walletAddress={account?.address} chain={"ETH_MAINNET"} /> 
 				
 					<TransactionsHistoryDisplay walletAddress={account?.address} />
 					

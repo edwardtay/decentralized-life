@@ -1,57 +1,37 @@
 .tx_history_container {
-    width: 930px;
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding: 1em;
-  }
-  
-  @media screen and (max-width: 955px) {
-    .tx_history_container {
-      width: 700px;
-    }
-  }
-  @media screen and (max-width: 750px) {
-    .tx_history_container {
-      width: 500px;
-    }
-  }
-  @media screen and (max-width: 560px) {
-    .tx_history_container {
-      width: 350px;
-    }
+    align: center;
+    
   }
   
   .table_container {
-    border: 1px solid #cfd9f0;
-    border-radius: 8px;
-    overflow: scroll;
-    margin-bottom: 1em;
-    min-height: 300px;
-    max-height: 400px;
     background-color: white;
+    padding: 1rem;
+    height: 50vh;
+    width: 80vw;
+    overflow: auto !important;
   }
   
   .header_container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1em;
-    align-items: center;
+    margin: 0.5em;
+    align-items: left;
   }
   
   .table {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
   }
   
   .column {
-    margin-bottom: 1em;
     white-space: nowrap;
   }
   
   .row {
-    padding: 12px;
-    height: 3em;
-    margin: auto;
+    padding: 1rem;
+    height: 1rem;
+    margin: 0.5rem;
     width: 100%;
     font-weight: 500;
   }
@@ -59,33 +39,35 @@
   .title {
     color: #949698;
     font-weight: 700;
-    
   }
+  
   
   .blue_text {
     color: #0057da;
   }
   
   .name {
-    font-size: 16px;
+    font-size: auto;
     font-weight: 700;
-    position:fixed;
+    position: center;
   }
   
   .tab_group {
     display: flex;
-    height: 40px;
-    width: 144px;
-    border: 1px solid #ecf0f9;
-    border-radius: 8px;
-    justify-content: space-between;
-    padding: 2px;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0 auto;
+    text-decoration: dashed underline;
+    text-decoration-skip-ink: auto;
+    text-underline-offset: 0.5rem;
+    text-decoration-color: grey;
   }
+  
   
   .button_clicked {
     border-radius: 8px;
     background-color: black;
-    color: greenyellow;
+    color: orange;
     border: none;
     padding: 6px 7px;
     font-weight:bold;
@@ -102,15 +84,19 @@
     border-radius: 8px;
     background-color: black;
     color: white;
-    padding: 6px 7px;
+    padding: 0.5rem ;
+    margin: 0.5rem;
+    float: right;
   }
   
   .load_button_disabled {
     border-radius: 8px;
     background-color: grey;
     color: white;
-    padding: 6px 7px;
+    padding: 0.5rem;
+    margin: 0.5rem;
     cursor: not-allowed;
+    float: right;
   }
   
   .warning {
